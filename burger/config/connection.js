@@ -10,7 +10,7 @@ app.set("view engine", "handlebars");
 
 var mysql = require("mysql");
 var connection = mysql.createConnection({ 
-  port: 3007,
+  port: 3306,
   host: "localhost",
   user: "root",
   //password: " ",
