@@ -9,4 +9,4 @@ CREATE TABLE burgers(
   PRIMARY KEY (id)
 );
 
--- this schema.sql file, when prompted in mysql with the file path, e.g. mysql source /Users/username/Desktop/RCB/eatdaburger/burger/db/schema.sql, will automatically create the database and table in mqsl
+-- this schema.sql file, when prompted in mysql with the file path, e.g. mysql source /Users/marcosebello/Desktop/RCB/eatdaburger/burger/db/schema.sql, will automatically create the database and table in mqsl
