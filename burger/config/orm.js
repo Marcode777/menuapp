@@ -23,7 +23,7 @@ var orm = {
     });
   },
   devourBurger: function(burgerID, cb) {
-    var query = "UPDATE burgers SET devoured=false, ready=true WHERE id=?";
+    var query = "UPDATE burgers SET devoured= ' ' + 1 + ' ' WHERE id=?"; //the single quotes keep it an integer instead of a string, this is a requirement!
     connection.query(query, [burgerID], function(err, res) {
       if (err) throw  err;
       cb(res);
