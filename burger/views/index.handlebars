@@ -9,7 +9,7 @@
       <thead><h1> Available Burgers </h1></thead>
         <br>
         {{#each burgers_data}}
-        {{#if this.devoured}}
+        {{#unless this.devoured}}
         <tbody>
           <tr>     
             <ul>
@@ -22,7 +22,7 @@
               </li>    
             </ul>
           </tr>
-        {{/if}} 
+        {{/unless}} 
         {{/each}} 
         </tbody>
       </table>        
@@ -31,7 +31,7 @@
       <table class="table table-condensed">
         <thead><h1>DEVOURED</h1></thead>
         {{#each burgers_data}}
-        {{#if this.ready}}
+        {{#if this.devoured}}
         <tbody>
           <tr>
             <ul>
