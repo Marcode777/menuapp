@@ -1,6 +1,8 @@
+//this works when i'm inside the actual file
 var express = require("express");
 var bodyParser = require("body-parser");
 var PORT = 3007;
+var app = express();
 
 app.use(bodyParser.urlencoded({extended : false}));
 
@@ -10,7 +12,7 @@ app.set("view engine", "handlebars");
 
 var mysql = require("mysql");
 var connection = mysql.createConnection({ 
-  port: 3007,
+  port: 3306, //btw port 3306 is common convention for a mysql port; this mysql port has to be a different port from the node port 3306 is the default mysql port
   host: "localhost",
   user: "root",
   //password: " ",
