@@ -10,6 +10,12 @@
         <br>
         {{#each burgers_data}}
         {{#unless this.devoured}}
+         <div class="burgerBorder"> 
+          <img class="burgerImg" src="/static/public/images/burger.jpg">     
+          <div>
+            <div class="burger">{{this.id}}. {{this.burger_name}}</div>
+          </div>
+        </div>
         <tbody>
           <tr>     
             <ul>
@@ -55,7 +61,7 @@
     <div class="col-md-12">
       <form action="/add" method="POST">
         <textarea class="form-control" type="text" name="burger_name" value="" id="enter_text"></textarea>
-        <button type="button" class="btn btn-success" align="right"> Add Burger</button>
+        <button type="submit" class="btn btn-success" align="right"> Add Burger</button>
       </form> 
     </div>
   </div>

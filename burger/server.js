@@ -5,6 +5,7 @@ var connection = require("./config/connection.js");
 var handleBars = require("express-handlebars");
 var app = express();
 var PORT = process.env.NODE_ENV || 3000;
+app.use("/static", express.static("public")); // this line lets me pull images from the public folder where i have images stored and have it displayed onto the page
 
 
 app.use(express.static(__dirname + '/public'));
