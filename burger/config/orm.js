@@ -16,7 +16,7 @@ var orm = {
     });
   }, 
   addBurger: function(burgerName, cb) {
-    var query = "INSERT INTO burgers (burger_name, devoured, ready) VALUES (?, TRUE , FALSE)";
+    var query = "INSERT INTO burgers (burger_name, devoured) VALUES (?, 0)";//changed (0, TRUE, FALSE) into (?,0) because mysql will only accept integers for boolean values 0 = false, 1 = true
     connection.query(query, [burgerName], function(err, res) {
       if(err) throw err;
       cb(res);
