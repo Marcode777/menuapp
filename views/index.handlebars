@@ -1,0 +1,68 @@
+<div class="well">
+  <h1>EATDABURGER</h1>
+</div>
+
+<div class="container-fluid">
+  <div class="row">   
+    <div class="col-md-6"> 
+      <table class="table table-condensed">
+      <thead><h1> Available Burgers </h1></thead>
+        <br>
+        {{#each burgers_data}}
+        {{#unless this.devoured}}
+         <div class="burgerBorder"> 
+          <img class="burgerImg" height=100 width=100 src="/static/burger.jpg"> 
+          <div>
+            <div class="burger">{{this.id}}. {{this.burger_name}}</div>
+          </div>
+        </div>
+        <tbody>
+          <tr>     
+            <ul>
+              <li> 
+                <form method="POST" action="/devour">
+                  {{this.burger_name}}
+                  <input type="hidden" type="text" name="id" value={{this.id}}>
+                  <button type="submit" class="btn btn-sm btn-warning pull-right"> Devour It </button>
+                </form> 
+              </li>    
+            </ul>
+          </tr>
+        {{/unless}} 
+        {{/each}} 
+        </tbody>
+      </table>        
+    </div> 
+    <div class="col-md-6">
+      <table class="table table-condensed">
+        <thead><h1>DEVOURED</h1></thead>
+        {{#each burgers_data}}
+        {{#if this.devoured}}
+        <tbody>
+          <tr>
+            <ul>
+              <li>
+              <form method="POST" action="/delete?_method=DELETE">
+              {{this.burger_name}} 
+                <input type="hidden" type="text" name="id" value={{this.id}}>
+                <button type="submit" class="btn btn-sm btn-danger pull-right">x</button>
+              </form>
+              </li>
+            </ul>
+          </tr>
+          {{/if}}
+          {{/each}}
+        </tbody>
+      </table>  
+    </div> 
+  </div>
+</div>
+  <div class="row">
+    <div class="col-md-12">
+      <form action="/add" method="POST">
+        <textarea class="form-control" type="text" name="burger_name" value="" id="enter_text"></textarea>
+        <button type="submit" class="btn btn-success" align="right"> Add Burger</button>
+      </form> 
+    </div>
+  </div>
+</div>  
