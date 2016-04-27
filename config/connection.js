@@ -1,7 +1,7 @@
 //this works when i'm inside the actual file
 var express = require("express");
 var bodyParser = require("body-parser");
-var PORT = 3007;
+var PORT = process.env.PORT || 3007; //changed from just PORT 3007 in original code
 var app = express();
 
 app.use(bodyParser.urlencoded({extended : false}));
