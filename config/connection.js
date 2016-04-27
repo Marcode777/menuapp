@@ -13,10 +13,10 @@ app.set("view engine", "handlebars");
 var mysql = require("mysql");
 var connection = mysql.createConnection({ 
   port: 3306, //btw port 3306 is common convention for a mysql port; this mysql port has to be a different port from the node port 3306 is the default mysql port
-  host: "localhost",
-  user: "root",
-  //password: " ",
-  database: "burgers_db"
+  host: "z12itfj4c1vgopf8.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", // this was "localhost" before utilizing JAWSDB in order to successfully connect to heroku
+  user: "mzi7vmp5g0boo6o9", // this was "root" before utilizing mzi7vmp5g0boo6o9 to connect to JAWSDB for heroku
+  password: "unsve3rgn63zlu7f", // this password part was commented out before utilizing JAWSDB to connect to heroku
+  database: "burgers_db" // this is also the database name for heroku
 
 })
 
